@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自定义事件</title>
+</head>
+<body>
+  <ul class="ul">
+    <li class="li">
+      <button class="btn">点我</button>
+    </li>
+  </ul>
+
+  <script>
+    window.onload = function () {
+      const myEvent = document.createEvent('CustomEvent')
+      myEvent.initEvent('myEvent', true, true)
+
+      const btn = document.querySelector('.btn')
+      btn.addEventListener('myEvent', function () {
+        console.log('button')
+      })
+
+      const li = document.querySelector('.li')
+      li.addEventListener('myEvent', function () {
+        console.log('li')
+      })
+
+      const ul = document.querySelector('ul')
+      ul.addEventListener('myEvent', function () {
+        console.log('ul')
+      })
+
+      document.addEventListener('myEvent', function () {
+        console.log('document')
+      })
+
+      window.addEventListener('myEvent', function () {
+        console.log('window')
+      })
+
+      btn.addEventListener('click', () => {
+        btn.dispatchEvent(myEvent)
+      })
+      //
+      // setTimeout(() => {
+      //   btn.dispatchEvent(myEvent)
+      // }, 2000)
+    }
+  </script>
+</body>
+</html>
