@@ -1,24 +1,27 @@
 # javaScript的数据类型
 
 ## 目录
-- [javaScript的数据类型](#javaScript的数据类型)
-- [逻辑非](#逻辑非)
+- [基本数据类型](#基本数据类型)
+- [引用类型](#引用类型)
+- [特殊数据类型](#特殊数据类型)
+- [判断数据类型的四种方法](#判断数据类型的四种方法)
+- [js类型转换](#js类型转换)
+- [隐式类型转换场景](#隐式类型转换场景)
 
-## <a id="javaScript的数据类型">javaScript的数据类型</a>
 js的数据类型有：Number、String、Boolean、Undefined、Object、Null，ES6中新增了Symbol，表示独一无二的值
-### 基本数据类型
+### <a id="基本数据类型">基本数据类型</a>
 * `Number`
 * `String`
 * `Boolean`
 * `Null` 
 * `Undefine`
 
-### Object（引用类型）中包含了哪几种类型？
+### <a id="引用类型">Object（引用类型）中包含了哪几种类型？</a>
 * `Data` - 数组
 * `Object` - 对象
 * `RegExp` - 正则
 
-### 特殊数据类型
+### <a id="特殊数据类型">特殊数据类型</a>
 * `Null` - 它表示一个空对象引用（指针），而typeof操作符检测null会返回一个Object    
     * `typeof null` 会输出Object，这是因为js在最初版本是使用32位系统，不同的对象在底层都是二进制存储,js中二进制前三位为0的话会被判断为object类型，而null的二进制都是0，造成误判。
 * `Undefine` - 在使用var声明变量但没有对其初始化时。这个变量的值就是undefined
@@ -27,7 +30,7 @@ js的数据类型有：Number、String、Boolean、Undefined、Object、Null，E
     * 任何数据与它运算都会返回NaN
     * isNaN() 用来判断是不是非数字，返回布尔值
 
-### 判断数据类型
+### <a id="判断数据类型的四种方法">判断数据类型的四种方法</a>
 * typeof 可以对基本类型（包括function）做出准确的判断，但对于引用类型返回都是Object
 ```javascript
     typeof ""  //string
@@ -91,10 +94,11 @@ js的数据类型有：Number、String、Boolean、Undefined、Object、Null，E
 ```
 
 接下来我们分析一下四种方法各自的优缺点
+<br>
 ![1](../images/typeof.png)
 
 
-### js类型转换
+### <a id="js类型转换">js类型转换</a>
 #### Boolean()将其他数据类型转成布尔值
 0、-0、空字符串""、null、undefined、NaN、false、document.all()这8个转布尔值为false，其他的都为true。
 ```javascript
@@ -200,7 +204,7 @@ const obj = {
 // '00-2333'
 ```
 
-### 隐式类型转换场景
+### <a id="隐式类型转换场景">隐式类型转换场景</a>
 #### + （字符串连接符/算术运算符）
 * +两边有一边是字符串的话，此时+为字符串连接符，其他情况则为算术运算符。
     * 字符串连接符：将其他数据类型转成字符串，然后进行拼接。
