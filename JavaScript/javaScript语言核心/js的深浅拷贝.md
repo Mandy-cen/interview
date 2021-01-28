@@ -94,6 +94,7 @@ const obj2 = Object.assign({}, obj1)
 ```
 
 * 运算扩展符`...`
+    * 对于简单对象和数组就是深复制，但是对于复杂对象或者是数组就是浅复制
 ```javascript
 // 对象拷贝
 const obj1 = {
