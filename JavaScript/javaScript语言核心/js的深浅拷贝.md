@@ -81,7 +81,7 @@ function extend(left = {}, right = {}) {
 }
 extend(obj1, obj2)
 ```
-* `Object.assign`
+* `Object.assign()`
 ```javascript
 const obj1 = {
   name: 'JavaScript',
